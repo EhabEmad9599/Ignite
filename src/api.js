@@ -22,8 +22,7 @@ const nextYear = `${getDate().slice(0, 4) + 1}-${currentMonth}-${currentDay}`;
 const popular_games = `games?key=${process.env.REACT_APP_IGNITE_API}&dates=${lastYear},${currentDate}&ordering=-rating&page_size=20`;
 
 
-const popularGamesURL = () => `${base_url}${popular_games}` ;
+export const popularGamesURL = () => `${base_url}${popular_games}` ;
 
 
 
-console.log(popularGamesURL());
