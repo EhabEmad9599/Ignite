@@ -1,31 +1,13 @@
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { loadGames, newGames, upcomingGames } from "./reducers/gamesReducers";
-
-
-
-
-
+import React from "react";
+import  Home  from "./pages/Home";
+import GlobalStyles from "./components/GlobalStyles";
 
 function App() {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(loadGames())
-  }, [dispatch])
-
-  useEffect(() => {
-    dispatch(upcomingGames())
-  }, [dispatch])
-
-  useEffect(() => {
-    dispatch(newGames())
-  }, [dispatch])
-
 
   return (
     <div className="App">
-      <h1>Hello Ignite</h1>
+      <GlobalStyles/>
+      <Home/>
     </div>
   );
 }
