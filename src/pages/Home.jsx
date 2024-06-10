@@ -23,28 +23,25 @@ const Home = () => {
   }, [dispatch]); // Runs only once on component mount (adjust if needed)
   
   const games = useSelector((state) => state.games)
-  console.log(games.popular);
-  console.log(games.upcoming);
-  console.log(games.newGames);
 
   return (
     <GameList>
       <h2>upcoming Games</h2>
       <Games>
           {games.upcoming.map((game) => {
-            return <Game key={game.id} name={game.name} released={game.released} image={game.background_image}/>
+            return <Game key={game.id} id={game.id} name={game.name} released={game.released} image={game.background_image}/>
           })}
       </Games>
       <h2>Popular Games</h2>
       <Games>
           {games.popular.map((game) => {
-            return <Game key={game.id} name={game.name} released={game.released} image={game.background_image}/>
+            return <Game key={game.id} id={game.id} name={game.name} released={game.released} image={game.background_image}/>
           })}
       </Games>
       <h2>New Games</h2>
       <Games>
           {games.newGames.map((game) => {
-            return <Game key={game.id} name={game.name} released={game.released} image={game.background_image}/>
+            return <Game key={game.id} id={game.id} name={game.name} released={game.released} image={game.background_image}/>
           })}
       </Games>
     </GameList>
