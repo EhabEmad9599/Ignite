@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { GameDetailsURL, gameScreenURL } from "../api";
 import axios from "axios";
 
-const initialState = {games: []};
+const initialState = {games: [], isLoading: true};
 
 
 // Fetching Game Deatils
@@ -10,18 +10,12 @@ export const loadDetails = createAsyncThunk('games/loadDetails', async (id, thun
   const { rejectWithValue } = thunkAPI;
   try {
     //Fetch Data
-    const [detailData, screenshotData] = await Promise.all([
-      axios.get(GameDetailsURL(id)),
-      axios.get(gameScreenURL(id)),
-    ]);
-
-    const { data: detailResponse } = detailData;
-    const { data: screenshotResponse } = screenshotData;
+    const detailData = await axios.get(GameDetailsURL(id));
+    const screenshotData = await axios.get(gameScreenURL(id));
 
       return {
-
-        details: detailResponse,
-        screen: screenshotResponse
+        details: detailData.data,
+        screen: screenshotData.data
       }
   }
 

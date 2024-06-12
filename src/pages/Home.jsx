@@ -4,11 +4,13 @@ import { loadGames, newGames, upcomingGames } from '../reducers/gamesReducers';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Game } from '../components/Game';
+import { GameDetail } from '../components/GameDetail';
 // import { loadGames} from "../pages/gamesReducers";
 
 
 const Home = () => {
   const dispatch = useDispatch();
+  const {isLoading} = useSelector((state) => state.detail)
 
   useEffect(() => {
     dispatch(loadGames());
@@ -26,6 +28,7 @@ const Home = () => {
 
   return (
     <GameList>
+      {!isLoading && <GameDetail/>}
       <h2>upcoming Games</h2>
       <Games>
           {games.upcoming.map((game) => {

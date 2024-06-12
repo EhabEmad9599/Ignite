@@ -3,6 +3,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { loadDetails } from '../reducers/detailReducer';
+import { Link } from 'react-router-dom';
 // styling and animate
 // import styled from 'styled-components';
 
@@ -15,9 +16,12 @@ export const Game = ({ id, name, released, image}) => {
   }
   return (
     <StyledGame onClick={() => loadDetailsHandler()}>
-      <h3>{name}</h3>
-      <p>{released}</p>
-      <img src={image} alt={name} />
+      <Link to={`game/${id}`}>
+        <h3>{name}</h3>
+        <p>{released}</p>
+        <img src={image} alt={name} />
+      
+      </Link>
     </StyledGame>
   )
 }
