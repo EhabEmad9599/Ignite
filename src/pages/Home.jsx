@@ -10,7 +10,6 @@ import { GameDetail } from '../components/GameDetail';
 
 const Home = () => {
   const dispatch = useDispatch();
-  const {isLoading} = useSelector((state) => state.detail)
 
   useEffect(() => {
     dispatch(loadGames());
@@ -28,7 +27,7 @@ const Home = () => {
 
   return (
     <GameList>
-      {!isLoading && <GameDetail/>}
+      <GameDetail/>
       <h2>upcoming Games</h2>
       <Games>
           {games.upcoming.map((game) => {
@@ -69,3 +68,6 @@ const Games = styled(motion.div)`
 `;
 
 export default Home;
+
+
+

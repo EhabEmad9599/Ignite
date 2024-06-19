@@ -12,6 +12,7 @@ export const Game = ({ id, name, released, image}) => {
   const dispatch = useDispatch();
 
   const loadDetailsHandler = () => {
+    document.body.style.overflow = 'hidden';
     dispatch(loadDetails(id))
   }
   return (

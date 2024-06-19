@@ -38,5 +38,3 @@ export const newGamesURL = () => `${base_url}${newGames}` ;
 export const GameDetailsURL = (game_id) => `${base_url}games/${game_id}?key=${process.env.REACT_APP_IGNITE_API}`;
 export const gameScreenURL = (game_id) => `${base_url}games/${game_id}/screenshots?key=${process.env.REACT_APP_IGNITE_API}`;
 
-
-// console.log(gameScreenURL());
