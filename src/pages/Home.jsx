@@ -28,7 +28,7 @@ const Home = () => {
 
   return (
     <GameList>
-      <Outlet/>
+        <Outlet/>
       <h2>upcoming Games</h2>
       <Games>
           {games.upcoming.map((game) => {
