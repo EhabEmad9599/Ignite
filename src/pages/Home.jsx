@@ -14,15 +14,9 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(loadGames());
-  }, [dispatch]); // Runs only once on component mount
-  
-  useEffect(() => {
     dispatch(upcomingGames());
-  }, [dispatch]); // Runs only once on component mount (adjust if needed)
-  
-  useEffect(() => {
     dispatch(newGames());
-  }, [dispatch]); // Runs only once on component mount (adjust if needed)
+  }, [dispatch]); // Runs only once on component mount
   
   const games = useSelector((state) => state.games)
 
