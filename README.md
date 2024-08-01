@@ -4,8 +4,6 @@
 # Installing
 to get the project running, follow these steps:
 
-- clone this repository:
-
 - install all the project's dependencies
 ``` html
 npm install
