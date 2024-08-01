@@ -1,1 +1,1 @@
-[View Live Site](https://admin-dashbord21.netlify.app/)
+[View Live Site](https://game-details.netlify.app/)
