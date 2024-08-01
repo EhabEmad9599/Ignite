@@ -22,11 +22,11 @@ const nextYear = `${today.getFullYear() + 1}-${currentMonth}-${currentDay}`;
 
 
 // Popular_Games
-const popular_games = `games?key=${process.env.REACT_APP_IGNITE_API}&dates=${lastYear},${currentDate}&ordering=-rating&page_size=9`;
+const popular_games = `games?key=${process.env.REACT_APP_IGNITE_API}&dates=${lastYear},${currentDate}&ordering=-rating&page_size=12`;
 // upcoming Games
-const upcoming_games = `games?key=${process.env.REACT_APP_IGNITE_API}&dates=${currentDate},${nextYear}&ordering=-added&page_size=9`;
+const upcoming_games = `games?key=${process.env.REACT_APP_IGNITE_API}&dates=${currentDate},${nextYear}&ordering=-added&page_size=12`;
 // newGames
-const newGames = `games?key=${process.env.REACT_APP_IGNITE_API}&dates=${lastYear},${currentDate}&ordering=-released&page_size=9`;
+const newGames = `games?key=${process.env.REACT_APP_IGNITE_API}&dates=${lastYear},${currentDate}&ordering=-released&page_size=12`;
 
 
 export const popularGamesURL = () => `${base_url}${popular_games}` ;
@@ -37,4 +37,7 @@ export const newGamesURL = () => `${base_url}${newGames}` ;
 
 export const GameDetailsURL = (game_id) => `${base_url}games/${game_id}?key=${process.env.REACT_APP_IGNITE_API}`;
 export const gameScreenURL = (game_id) => `${base_url}games/${game_id}/screenshots?key=${process.env.REACT_APP_IGNITE_API}`;
+
+//Game Search
+export const gameSearchURL = (game_name) => `${base_url}games?search=${game_name}`;
 
